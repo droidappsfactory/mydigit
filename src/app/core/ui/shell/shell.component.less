@@ -1,0 +1,58 @@
+@import (reference) '../../../../styles.less';
+
+:host ::ng-deep .trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color .3s;
+}
+
+:host ::ng-deep .trigger:hover {
+  color: #1890ff;
+}
+
+:host ::ng-deep .logo {
+  height: 32px;
+  background: rgba(255, 255, 255, .2);
+  margin: 16px;
+  color: @normal-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h4{
+    color: @normal-color;
+
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+  }
+}
+
+:host ::ng-deep nz-layout{
+  min-height: 100vh;
+}
+
+:host ::ng-deep nz-sider{
+ background-color: black;
+}
+
+.btn-div{
+  float: right;
+  display: flex;
+  justify-content: center;
+  width: 120px;
+  height: 100%;
+  flex-direction: column;
+
+  .btn-logout{
+    padding: 0px;
+    margin: 0px;
+    width: 80px;
+    cursor: pointer;
+  }
+
+
+}
+
