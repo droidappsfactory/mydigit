@@ -1,64 +1,87 @@
-
 <nz-layout>
   <nz-sider
     nzCollapsible
     [(nzCollapsed)]="isCollapsed"
     [nzTrigger]="triggerTemplate"
   >
-    <div class="logo">
-      <h4>{{isCollapsed ? 'Hi':'Hello Rishi'}}</h4>
+    <div *ngIf="isCollapsed; else showProImage" class="logo">
+      <h4>Hi</h4>
     </div>
+    <ng-template #showProImage>
+      <div class="proImageDiv" *ngIf="(afAuth.user | async) as user; else showLoggednUserName">
+        <img class="proImage" [src]="user.photoURL" />
+        <h4>{{ user.displayName }}</h4>
+      </div>
+      <ng-template #showLoggednUserName>
+        <h4>User Name</h4>
+      </ng-template>
+    </ng-template>
     <ul
       nz-menu
       [nzTheme]="'dark'"
       [nzMode]="'inline'"
       [nzInlineCollapsed]="isCollapsed"
     >
-      <li nz-submenu>
+      <li nz-menu-item [routerLink]="['/home']" routerLinkActive="router-link-active" [nzSelected]="router.isActive('home', true)">
+        <span
+          ><i nz-icon type="home"></i><span class="nav-text">Home</span></span
+        >
+      </li>
+      <li nz-submenu [nzOpen]="router.isActive('education', true) || router.isActive('contact', true)">
         <span title
-          ><i nz-icon type="user"></i><span class="nav-text">User</span></span
+          ><i nz-icon type="user"></i
+          ><span class="nav-text">My Info</span></span
         >
         <ul>
-          <li nz-menu-item>Tom</li>
-          <li nz-menu-item>Bill</li>
-          <li nz-menu-item>Alex</li>
+          <li nz-menu-item [routerLink]="['/education']" [nzSelected]="router.isActive('education', true)">Education</li>
+          <li nz-menu-item [routerLink]="['/contact']" [nzSelected]="router.isActive('contact', true)">Contact</li>
         </ul>
       </li>
       <li nz-submenu>
         <span title
-          ><i nz-icon type="team"></i><span class="nav-text">Team</span></span
+          ><i nz-icon type="read"></i
+          ><span class="nav-text">Knowledge</span></span
         >
         <ul>
-          <li nz-menu-item>Team 1</li>
-          <li nz-menu-item>Team 2</li>
+          <li nz-menu-item>Angular</li>
+          <li nz-menu-item>Node</li>
+          <li nz-menu-item>Mongo</li>
+          <li nz-menu-item>Android</li>
         </ul>
       </li>
       <li nz-menu-item>
         <span
-          ><i nz-icon type="file"></i><span class="nav-text">File</span></span
+          ><i nz-icon type="project"></i
+          ><span class="nav-text">Experience</span></span
         >
       </li>
     </ul>
   </nz-sider>
   <nz-layout>
-    <nz-header style="background: #fff; padding:0;">
+    <nz-header>
       <i
         class="trigger"
         nz-icon
         [type]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
         (click)="isCollapsed = !isCollapsed"
       ></i>
+      <span class="example-fill-remaining-space"></span>
       <div class="btn-div">
-        <button nz-button class="btn-logout">Logout</button>
+        <i
+          class="btn-logout"
+          nz-icon
+          type="logout"
+          theme="outline"
+          (click)="logout()"
+        ></i>
       </div>
-
     </nz-header>
-    <nz-content style="margin:0px;">
+    <nz-content style="margin:0px;background: #fff;">
       <!-- <nz-breadcrumb style="margin:16px 0;">
         <nz-breadcrumb-item>User</nz-breadcrumb-item>
         <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
       </nz-breadcrumb> -->
-      <div style="padding:24px; background: #fff; height: 100%;">
+      <div style="background: #fff; height: 100%;">
         <router-outlet></router-outlet>
       </div>
     </nz-content>

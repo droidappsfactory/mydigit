@@ -6,6 +6,7 @@
   padding: 0 24px;
   cursor: pointer;
   transition: color .3s;
+  color: whitesmoke;
 }
 
 :host ::ng-deep .trigger:hover {
@@ -28,7 +29,35 @@
     padding: 0px;
     margin: 0px;
   }
+
+
 }
+
+:host ::ng-deep .proImageDiv{
+
+  display: flex;
+  height: 160px;
+  flex-direction: column;
+
+  .proImage{
+    box-sizing: border-box;
+    margin: 20px 0px;
+    flex: 6;
+    width: 100px;
+
+    height: 100px;
+    align-self: center;
+  }
+  h4{
+    flex: 1;
+    color: #1890ff;
+    text-align: center;
+
+    height: 20px;
+  }
+}
+
+
 
 :host ::ng-deep nz-layout{
   min-height: 100vh;
@@ -38,19 +67,29 @@
  background-color: black;
 }
 
+:host ::ng-deep nz-header{
+  background-color: black;
+  padding: 0px;
+}
+
 .btn-div{
   float: right;
   display: flex;
   justify-content: center;
-  width: 120px;
+  width: 80px;
   height: 100%;
   flex-direction: column;
 
   .btn-logout{
     padding: 0px;
     margin: 0px;
-    width: 80px;
     cursor: pointer;
+    font-size: 20px;
+    color: whitesmoke;
+
+    :hover{
+      color: #1890ff;
+    }
   }
 
 

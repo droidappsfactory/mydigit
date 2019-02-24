@@ -1,14 +1,15 @@
 <div class="layout-container">
+
   <div class="component-layout">
     <h2 class="login-title">Login</h2>
     <input nz-input placeholder="Email Address" type="email"/>
     <input nz-input placeholder="Password" type="password"/>
-    <button nz-button nzType="primary" [routerLink]="['/home']" routerLinkActive="router-link-active">
+    <button nz-button nzType="primary" [routerLink]="['/home']">
       Login
     </button>
 
     <p> -- Or -- </p>
-
+    <button nz-button nzType="primary" (click)="login()">Sign in with Google</button>
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
     <a [routerLink]="['/signup']" routerLinkActive="router-link-active"
       >Signup</a

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { auth } from 'firebase/app';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'dig-login',
@@ -7,18 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  errormessage: string = null;
+  constructor(public afAuth: AngularFireAuth, private router: Router) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.afAuth.authState.subscribe(data => {
+      if(data){
+        this.router.navigate(['/home']);
+      }
+    });
   }
 
+  async login() {
 
-  onSignIn(googleUser) {
-    const profile = googleUser.getBasicProfile();
-    console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-    console.log('Name: ' + profile.getName());
-    console.log('Image URL: ' + profile.getImageUrl());
-    console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+    await this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider()).then(() => {
+      this.errormessage = null;
+    },
+    () => {
+      this.errormessage = 'Please login to proceed';
+    });
   }
-
 }

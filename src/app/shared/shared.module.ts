@@ -8,11 +8,13 @@ import { FormsModule } from '@angular/forms';
 import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
+import { EducationComponent } from './pages/education/education.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [LoginComponent, SignupComponent, HomeComponent],
+  declarations: [LoginComponent, SignupComponent, HomeComponent, EducationComponent, ContactComponent],
   imports: [
     NgZorroAntdModule,
     FormsModule,

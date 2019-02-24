@@ -3,13 +3,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { ShellComponent } from './ui/shell/shell.component';
 import { HomeComponent } from '../shared/pages/home/home.component';
 import { LoginComponent } from '../shared/pages/login/login.component';
+import { EducationComponent } from '../shared/pages/education/education.component';
+import { ContactComponent } from '../shared/pages/contact/contact.component';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: '',
     component: ShellComponent,
     children: [
-      { path: '', component: HomeComponent }
+      { path: 'home', component: HomeComponent },
+      { path: '', redirectTo: 'home', pathMatch: 'full'},
+      { path: 'education', component: EducationComponent },
+      { path: 'contact', component: ContactComponent },
     ]
   }
 ];
