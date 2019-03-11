@@ -13,6 +13,7 @@ import en from '@angular/common/locales/en';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment';
+import { CoreRoutingModule } from './core/core-routing.module';
 
 registerLocaleData(en);
 
@@ -26,6 +27,7 @@ registerLocaleData(en);
     AngularFireAuthModule,
     AppRoutingModule,
     CoreModule,
+    CoreRoutingModule,
     NgZorroAntdModule,
     FormsModule,
     HttpClientModule,

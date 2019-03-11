@@ -17,11 +17,11 @@ export class ShellComponent implements OnInit {
   constructor(public afAuth: AngularFireAuth, public router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.afAuth.user.subscribe(data => {
-      if (!data) {
-        this.router.navigate(['/login']);
-      }
-    });
+    // this.afAuth.user.subscribe(data => {
+    //   if (!data) {
+    //     this.router.navigate(['/login']);
+    //   }
+    // });
   }
 
   /** custom trigger can be TemplateRef **/

@@ -16,6 +16,7 @@ export const environment = {
     base: 'http://localhost:8000/v1',
     me: '/user/me',
     signup: '/auth/signup',
+    login: '/auth/login'
   },
 };
 
