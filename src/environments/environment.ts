@@ -11,7 +11,12 @@ export const environment = {
     projectId: 'mydigit-db533',
     storageBucket: 'mydigit-db533.appspot.com',
     messagingSenderId: '293717204511'
-  }
+  },
+  apiServer: {
+    base: 'http://localhost:8000/v1',
+    me: '/user/me',
+    signup: '/auth/signup',
+  },
 };
 
 /*

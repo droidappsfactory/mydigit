@@ -4,7 +4,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { HomeComponent } from './pages/home/home.component';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
@@ -17,6 +17,7 @@ registerLocaleData(en);
   declarations: [LoginComponent, SignupComponent, HomeComponent, EducationComponent, ContactComponent],
   imports: [
     NgZorroAntdModule,
+    ReactiveFormsModule,
     FormsModule,
     RouterModule,
     CommonModule

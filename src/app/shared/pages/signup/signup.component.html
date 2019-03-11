@@ -1,3 +1,28 @@
-<p>
-  signup works!
-</p>
+<div class="layout-container">
+  <div class="component-layout" [formGroup]="signupform">
+    <h2 class="login-title">SignUp</h2>
+    <input
+      formControlName="email"
+      nz-input
+      placeholder="Email Address"
+      type="email"
+    />
+    <input formControlName="name" nz-input placeholder="Name" type="text" />
+    <input
+      formControlName="password"
+      nz-input
+      placeholder="Password"
+      type="password"
+    />
+    <input
+      formControlName="confirmpassword"
+      nz-input
+      placeholder="Confirm Password"
+      type="password"
+    />
+
+    <button nz-button nzType="primary" (click)="onSignupClicked()">
+      SignUp
+    </button>
+  </div>
+</div>
