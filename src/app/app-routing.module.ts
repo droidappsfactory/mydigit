@@ -4,6 +4,7 @@ import { ShellComponent } from './core/ui/shell/shell.component';
 import { HomeComponent } from './shared/pages/home/home.component';
 import { LoginComponent } from './shared/pages/login/login.component';
 import { SignupComponent } from './shared/pages/signup/signup.component';
+import { FeedbackComponent } from './shared/pages/feedback/feedback.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'signup',
     component: SignupComponent
+  },
+  {
+    path: 'feedback',
+    component: FeedbackComponent
   },
 ];
 

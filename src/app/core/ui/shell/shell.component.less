@@ -33,6 +33,47 @@
 
 }
 
+:host ::ng-deep .upload-div{
+
+
+  height: 160px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+
+
+  label{
+    align-self: center;
+    position: absolute;
+    color: whitesmoke;
+    font-size: 24px;
+  }
+
+  .upload-img::-webkit-file-upload-button{
+    visibility: hidden;
+  }
+
+  .upload-img::-webkit-user-select{
+    visibility: hidden;
+  }
+
+  .upload-img{
+    align-self: center;
+    display: flex;
+    height: 120px;
+    width: 120px;
+    border: 1px solid whitesmoke;
+    border-radius: 3px;
+    background-color: gray;
+    opacity: .5;
+    color: transparent;
+    cursor: pointer;
+  }
+}
+
+
+
 :host ::ng-deep .proImageDiv{
 
   display: flex;

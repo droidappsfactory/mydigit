@@ -10,11 +10,27 @@ import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { EducationComponent } from './pages/education/education.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { FeedbackComponent } from './pages/feedback/feedback.component';
+import { AngularComponent } from './pages/angular/angular.component';
+import { NodeComponent } from './pages/node/node.component';
+import { MongoComponent } from './pages/mongo/mongo.component';
+import { AndroidComponent } from './pages/android/android.component';
+import { ExperienceComponent } from './pages/experience/experience.component';
 
 registerLocaleData(en);
 
 @NgModule({
-  declarations: [LoginComponent, SignupComponent, HomeComponent, EducationComponent, ContactComponent],
+  declarations: [LoginComponent,
+    SignupComponent,
+    HomeComponent,
+    EducationComponent,
+    ContactComponent,
+    FeedbackComponent,
+    AngularComponent,
+    NodeComponent,
+    MongoComponent,
+    AndroidComponent,
+    ExperienceComponent],
   imports: [
     NgZorroAntdModule,
     ReactiveFormsModule,
@@ -22,7 +38,17 @@ registerLocaleData(en);
     RouterModule,
     CommonModule
   ],
-  exports: [LoginComponent, SignupComponent, HomeComponent, NgZorroAntdModule],
+  exports: [LoginComponent, SignupComponent,
+    HomeComponent,
+    EducationComponent,
+    ContactComponent,
+    FeedbackComponent,
+    AngularComponent,
+    NodeComponent,
+    MongoComponent,
+    AndroidComponent,
+    ExperienceComponent,
+    NgZorroAntdModule],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
 })
 export class SharedModule { }

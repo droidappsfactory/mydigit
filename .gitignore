@@ -44,3 +44,5 @@ Thumbs.db
 
 # npmrc for proxy only
 .npmrc
+
+package-lock.json

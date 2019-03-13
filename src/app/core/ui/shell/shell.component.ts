@@ -9,7 +9,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ShellComponent implements OnInit {
 
-
+  user:any = {};
   isCollapsed = false;
   triggerTemplate = null;
   @ViewChild('trigger') customTrigger: TemplateRef<void>;
@@ -22,6 +22,7 @@ export class ShellComponent implements OnInit {
     //     this.router.navigate(['/login']);
     //   }
     // });
+    this.user.image = 'https://www.w3schools.com/html/img_girl.jpg';
   }
 
   /** custom trigger can be TemplateRef **/

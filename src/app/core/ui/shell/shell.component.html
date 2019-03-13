@@ -8,12 +8,23 @@
       <h4>Hi</h4>
     </div>
     <ng-template #showProImage>
-      <div class="proImageDiv" *ngIf="(afAuth.user | async) as user; else showLoggednUserName">
+      <!-- <div class="proImageDiv" *ngIf="user; else showLoggednUserName">
         <img class="proImage" [src]="user.photoURL" />
         <h4>{{ user.displayName }}</h4>
       </div>
       <ng-template #showLoggednUserName>
-        <h4>User Name</h4>
+        <h4 style="color:white">User Name</h4>
+      </ng-template> -->
+      <div class="upload-div" *ngIf="!user; else showUploadedImage">
+        <label for="upload-photo">+</label>
+        <input id="upload-photo" type="file" class="upload-img"/>
+      </div>
+      <ng-template #showUploadedImage>
+        <div class="upload-div">
+
+            <img *ngIf="user" [src]="user.image" class="upload-img" style="opacity: 1 !important; "/>
+        </div>
+
       </ng-template>
     </ng-template>
     <ul
@@ -22,19 +33,41 @@
       [nzMode]="'inline'"
       [nzInlineCollapsed]="isCollapsed"
     >
-      <li nz-menu-item [routerLink]="['/home']" routerLinkActive="router-link-active" [nzSelected]="router.isActive('home', true)">
+      <li
+        nz-menu-item
+        [routerLink]="['/home']"
+        routerLinkActive="router-link-active"
+        [nzSelected]="router.isActive('home', true)"
+      >
         <span
           ><i nz-icon type="home"></i><span class="nav-text">Home</span></span
         >
       </li>
-      <li nz-submenu [nzOpen]="router.isActive('education', true) || router.isActive('contact', true)">
+      <li
+        nz-submenu
+        [nzOpen]="
+          router.isActive('education', true) || router.isActive('contact', true)
+        "
+      >
         <span title
           ><i nz-icon type="user"></i
           ><span class="nav-text">My Info</span></span
         >
         <ul>
-          <li nz-menu-item [routerLink]="['/education']" [nzSelected]="router.isActive('education', true)">Education</li>
-          <li nz-menu-item [routerLink]="['/contact']" [nzSelected]="router.isActive('contact', true)">Contact</li>
+          <li
+            nz-menu-item
+            [routerLink]="['/education']"
+            [nzSelected]="router.isActive('education', true)"
+          >
+            Education
+          </li>
+          <li
+            nz-menu-item
+            [routerLink]="['/contact']"
+            [nzSelected]="router.isActive('contact', true)"
+          >
+            Contact
+          </li>
         </ul>
       </li>
       <li nz-submenu>
@@ -43,16 +76,18 @@
           ><span class="nav-text">Knowledge</span></span
         >
         <ul>
-          <li nz-menu-item>Angular</li>
-          <li nz-menu-item>Node</li>
-          <li nz-menu-item>Mongo</li>
-          <li nz-menu-item>Android</li>
+          <li nz-menu-item [routerLink]="['/angular']">Angular</li>
+          <li nz-menu-item [routerLink]="['/node']">Node</li>
+          <li nz-menu-item [routerLink]="['/mongo']">Mongo</li>
+          <li nz-menu-item [routerLink]="['/android']">Android</li>
         </ul>
       </li>
       <li nz-menu-item>
         <span
           ><i nz-icon type="project"></i
-          ><span class="nav-text">Experience</span></span
+          ><span class="nav-text" [routerLink]="['/experience']"
+            >Experience</span
+          ></span
         >
       </li>
     </ul>
@@ -85,8 +120,7 @@
         <router-outlet></router-outlet>
       </div>
     </nz-content>
-    <nz-footer style="text-align: center;">Developed using NG Zorro</nz-footer
-    >
+    <nz-footer style="text-align: center;">Developed using NG Zorro</nz-footer>
   </nz-layout>
 </nz-layout>
 <ng-template #trigger> <i nz-icon type="up"></i> </ng-template>
