@@ -43,6 +43,6 @@ testem.log
 Thumbs.db
 
 # npmrc for proxy only
-.npmrc
+/.npmrc
 
 package-lock.json
