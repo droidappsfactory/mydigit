@@ -542,6 +542,11 @@
 
 /* You can add global styles to this file, and also import other style files */
 
+
+*{
+  box-sizing: border-box;
+}
+
 body{
 padding: 0px;
 margin: 0px;
@@ -557,3 +562,25 @@ margin: 0px;
   display: flex;
   justify-content: center;
 }
+
+.div-component{
+
+  padding: 40px;
+
+  .component-title{
+    padding: 0px 0px 10px 0px;
+    font-size: 26px;
+    font-weight: 400;
+    vertical-align: middle;
+  }
+
+  .component-body{
+    padding: 0px;
+  }
+
+}
+
+.shadow-effect{
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important;
+}
+
