@@ -22,7 +22,7 @@ export class ShellComponent implements OnInit {
     //     this.router.navigate(['/login']);
     //   }
     // });
-    this.user.image = 'https://www.w3schools.com/html/img_girl.jpg';
+    //this.user.image = 'https://www.w3schools.com/html/img_girl.jpg';
   }
 
   /** custom trigger can be TemplateRef **/

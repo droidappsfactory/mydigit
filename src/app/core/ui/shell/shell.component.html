@@ -15,7 +15,7 @@
       <ng-template #showLoggednUserName>
         <h4 style="color:white">User Name</h4>
       </ng-template> -->
-      <div class="upload-div" *ngIf="!user; else showUploadedImage">
+      <div class="upload-div" *ngIf="!user.image; else showUploadedImage">
         <label for="upload-photo">+</label>
         <input id="upload-photo" type="file" class="upload-img"/>
       </div>
