@@ -16,6 +16,7 @@ import { NodeComponent } from './pages/node/node.component';
 import { MongoComponent } from './pages/mongo/mongo.component';
 import { AndroidComponent } from './pages/android/android.component';
 import { ExperienceComponent } from './pages/experience/experience.component';
+import { UtilitiesComponent } from './pages/utilities/utilities.component';
 
 registerLocaleData(en);
 
@@ -30,7 +31,8 @@ registerLocaleData(en);
     NodeComponent,
     MongoComponent,
     AndroidComponent,
-    ExperienceComponent],
+    ExperienceComponent,
+    UtilitiesComponent],
   imports: [
     NgZorroAntdModule,
     ReactiveFormsModule,
@@ -48,6 +50,7 @@ registerLocaleData(en);
     MongoComponent,
     AndroidComponent,
     ExperienceComponent,
+    UtilitiesComponent,
     NgZorroAntdModule],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
 })

@@ -10,6 +10,7 @@ import { NodeComponent } from '../shared/pages/node/node.component';
 import { MongoComponent } from '../shared/pages/mongo/mongo.component';
 import { AndroidComponent } from '../shared/pages/android/android.component';
 import { ExperienceComponent } from '../shared/pages/experience/experience.component';
+import { UtilitiesComponent } from '../shared/pages/utilities/utilities.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,7 @@ const routes: Routes = [
       { path: 'mongo', component: MongoComponent },
       { path: 'android', component: AndroidComponent },
       { path: 'experience', component: ExperienceComponent },
+      { path: 'utilities', component: UtilitiesComponent }
     ]
   }
 ];
