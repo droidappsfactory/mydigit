@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef, Inject } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router, ActivatedRoute } from '@angular/router';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'dig-shell',
@@ -9,12 +10,15 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ShellComponent implements OnInit {
 
-  user:any = {};
+  // @Inject(DOCUMENT) private document: any;
+
+  user: any = {};
   isCollapsed = false;
   triggerTemplate = null;
   @ViewChild('trigger') customTrigger: TemplateRef<void>;
 
-  constructor(public afAuth: AngularFireAuth, public router: Router, private route: ActivatedRoute) { }
+  constructor(public afAuth: AngularFireAuth, public router: Router, private route: ActivatedRoute
+    , @Inject(DOCUMENT) private document: any) { }
 
   ngOnInit() {
     // this.afAuth.user.subscribe(data => {
@@ -31,5 +35,10 @@ export class ShellComponent implements OnInit {
   }
   logout() {
     this.afAuth.auth.signOut();
+  }
+
+
+  redirectClicked() {
+    this.document.location.href = 'https://stackoverflow.com';
   }
 }

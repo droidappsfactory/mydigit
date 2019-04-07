@@ -17,14 +17,17 @@
       </ng-template> -->
       <div class="upload-div" *ngIf="!user.image; else showUploadedImage">
         <label for="upload-photo">+</label>
-        <input id="upload-photo" type="file" class="upload-img"/>
+        <input id="upload-photo" type="file" class="upload-img" />
       </div>
       <ng-template #showUploadedImage>
         <div class="upload-div">
-
-            <img *ngIf="user" [src]="user.image" class="upload-img" style="opacity: 1 !important; "/>
+          <img
+            *ngIf="user"
+            [src]="user.image"
+            class="upload-img"
+            style="opacity: 1 !important; "
+          />
         </div>
-
       </ng-template>
     </ng-template>
     <ul
@@ -108,7 +111,9 @@
         [type]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
         (click)="isCollapsed = !isCollapsed"
       ></i>
-      <span class="example-fill-remaining-space"></span>
+      <span class="example-fill-remaining-space">
+        <button nz-button (click)="redirectClicked()">Redirect</button>
+      </span>
       <div class="btn-div">
         <i
           class="btn-logout"

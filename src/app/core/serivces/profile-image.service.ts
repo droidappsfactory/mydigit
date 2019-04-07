@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '../http/http.service';
-import { environment } from 'src/environments/environment';
+import { environment } from 'environments/environment';
 import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({

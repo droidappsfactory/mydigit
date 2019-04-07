@@ -3,7 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
+import { AuthenticationService } from '@app/core/authentication/authentication.service';
 
 @Component({
   selector: 'dig-login',

@@ -6,7 +6,7 @@ import {
   transition,
   animate
 } from '@angular/animations';
-import { ProfileImageService } from 'src/app/core/serivces/profile-image.service';
+import { ProfileImageService } from '@app/core/serivces/profile-image.service';
 
 @Component({
   selector: 'dig-home',
@@ -71,7 +71,8 @@ export class HomeComponent implements OnInit {
     fd.append('user', 'admin');
     console.log(fd);
     this._profileImageService.uploadProfileImage(fd).subscribe(data => {
-      this.uploadedImageLink = 'http://localhost:8000/static/admin' + this.file.name;
+      this.uploadedImageLink =
+        'http://localhost:8000/static/admin' + this.file.name;
       console.log('link ', this.uploadedImageLink);
     });
   }

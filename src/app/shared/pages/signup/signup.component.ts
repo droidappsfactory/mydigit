@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
-import { AuthenticationService } from 'src/app/core/authentication/authentication.service';
-import { environment } from 'src/environments/environment';
-import { HttpService } from 'src/app/core/http/http.service';
+import { AuthenticationService } from '@app/core/authentication/authentication.service';
+import { environment } from 'environments/environment';
+import { HttpService } from '@app/core/http/http.service';
 
 @Component({
   selector: 'dig-signup',
